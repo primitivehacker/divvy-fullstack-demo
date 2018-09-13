@@ -1,0 +1,14 @@
+# import Income, Expense, ExpenseWhereUniqueInput from "./generated/prisma.graphql"
+# import Expense from "./generated/prisma.graphql"
+
+type Query {
+  incomes: [Income!]!
+  expenses: [Expense!]!
+}
+
+type Mutation {
+  addIncome(value: Int!, description: String!): Income!
+  addExpense(value: Int!, description: String!): Expense!
+  deleteIncome(id: ID!): Income!
+  deleteExpense(where: ExpenseWhereUniqueInput!): Expense
+}
